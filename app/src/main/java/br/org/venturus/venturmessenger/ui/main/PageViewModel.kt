@@ -1,4 +1,4 @@
-package br.org.venturus.ui.main
+package br.org.venturus.venturmessenger.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

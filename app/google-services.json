@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "111273571529",
+    "project_id": "venturmessenger",
+    "storage_bucket": "venturmessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111273571529:android:3132fa128066caf4f14918",
+        "android_client_info": {
+          "package_name": "br.org.venturus.venturmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111273571529-gohjh440husc3gvlkksmi1lir36va80s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.org.venturus.venturmessenger",
+            "certificate_hash": "d117d0c8b3e7885f53891c1801b73d6202387724"
+          }
+        },
+        {
+          "client_id": "111273571529-uau4qrh9edlul6r8f3cljmivpgrnsiin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiGjU8XW5sVkeU22Sq23TtAbTjsvEC2RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111273571529-uau4qrh9edlul6r8f3cljmivpgrnsiin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

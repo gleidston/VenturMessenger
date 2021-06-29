@@ -1,4 +1,4 @@
-package br.org.venturus
+package br.org.venturus.venturmessenger
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -8,8 +8,8 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import br.org.venturus.ui.main.SectionsPagerAdapter
-import br.org.venturus.databinding.ActivityMainBinding
+import br.org.venturus.venturmessenger.ui.main.SectionsPagerAdapter
+import br.org.venturus.venturmessenger.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

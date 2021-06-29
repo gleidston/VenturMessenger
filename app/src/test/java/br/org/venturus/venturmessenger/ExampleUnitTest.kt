@@ -1,4 +1,4 @@
-package br.org.venturus
+package br.org.venturus.venturmessenger
 
 import org.junit.Test
 

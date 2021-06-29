@@ -1,10 +1,10 @@
-package br.org.venturus.ui.main
+package br.org.venturus.venturmessenger.ui.main
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import br.org.venturus.R
+import br.org.venturus.venturmessenger.R
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,

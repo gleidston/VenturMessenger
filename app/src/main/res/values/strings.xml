@@ -2,5 +2,5 @@
     <string name="app_name">VenturMessenger</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="login">Login</string>
+    <string name="button_textLogin">Entrar</string>
 </resources>

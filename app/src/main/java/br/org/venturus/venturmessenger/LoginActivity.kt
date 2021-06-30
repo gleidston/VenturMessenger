@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
 
-        findViewById<Button>(R.id.btn_login).setOnClickListener {
+        findViewById<Button>(R.id.loginButton).setOnClickListener {
             startActivityForResult(
                 AuthUI.getInstance()
                     .createSignInIntentBuilder()

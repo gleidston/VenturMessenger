@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import br.org.venturus.venturmessenger.model.User
+import br.org.venturus.venturmessenger.repository.UserRepository
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
@@ -27,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
 
+
         findViewById<Button>(R.id.loginButton).setOnClickListener {
             resultLauncher.launch(
                 AuthUI.getInstance()
@@ -45,12 +48,32 @@ class LoginActivity : AppCompatActivity() {
 
         if (resultCode == Activity.RESULT_OK) {
             //Success
-            val intent: Intent = Intent(this, MainActivity::class.java)
+            val current = FirebaseAuth.getInstance().currentUser?.apply {
+                val user: User = User(
+                    name = this.displayName ?: "NO NAME",
+                    email = this.email ?: "NO EMAIL",
+                    id = this.uid
+                )
+                UserRepository.addUser(user, {
+                    goToMain()
+                }, {
+                    failToLogin(it)
+                })
+            }
 
-            startActivity(intent)
-            finish()
         } else {
             Toast.makeText(this, response?.error?.message, Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun failToLogin(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    private fun goToMain() {
+        val intent: Intent = Intent(this, MainActivity::class.java)
+
+        startActivity(intent)
+        finish()
     }
 }

@@ -3,5 +3,6 @@
     <string name="tab_text_1">Chat</string>
     <string name="tab_text_2">Configurações</string>
     <string name="tab_text_3">Mensagens</string>
+    <string name="bem_vindo">Seja bem vido </string>
     <string name="button_textLogin">Entrar</string>
 </resources>

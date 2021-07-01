@@ -1,23 +1,14 @@
 package br.org.venturus.venturmessenger
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatActivity
+import br.org.venturus.venturmessenger.viewmodel.SplashViewModel
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val user = FirebaseAuth.getInstance().currentUser
-
-        val intent = if(user == null) {
-            Intent(this, LoginActivity::class.java)
-        } else {
-            Intent(this, MainActivity::class.java)
-        }
-
-        startActivity(intent)
+        startActivity(SplashViewModel().userIsLogged(context = this))
         finish()
     }
 }

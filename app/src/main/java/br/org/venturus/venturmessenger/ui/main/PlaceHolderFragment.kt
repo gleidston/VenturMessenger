@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import br.org.venturus.venturmessenger.R
+import androidx.recyclerview.widget.RecyclerView
 import br.org.venturus.venturmessenger.databinding.FragmentMainBinding
+import br.org.venturus.venturmessenger.model.ContactsAdapter
 
 /**
  * A placeholder fragment containing a simple view.
  */
-class PlaceholderFragment : Fragment() {
+class PlaceHolderFragment : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
     private var _binding: FragmentMainBinding? = null
@@ -23,25 +23,21 @@ class PlaceholderFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        pageViewModel = ViewModelProvider(this).get(PageViewModel::class.java).apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        pageViewModel = ViewModelProvider(this).get(PageViewModel::class.java)
 
         _binding = FragmentMainBinding.inflate(inflater, container, false)
-        val root = binding.root
+        val root: View = binding.root
 
-        val textView: TextView = binding.sectionLabel
-        pageViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val contactList: RecyclerView = binding.contactList
+        val adapter: ContactsAdapter = ContactsAdapter()
+        pageViewModel.contactsList.observe(viewLifecycleOwner, Observer {
+            adapter.setContactList(it)
         })
+
         return root
     }
 
@@ -57,8 +53,8 @@ class PlaceholderFragment : Fragment() {
          * number.
          */
         @JvmStatic
-        fun newInstance(sectionNumber: Int): PlaceholderFragment {
-            return PlaceholderFragment().apply {
+        fun newInstance(sectionNumber: Int): PlaceHolderFragment {
+            return PlaceHolderFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARG_SECTION_NUMBER, sectionNumber)
                 }

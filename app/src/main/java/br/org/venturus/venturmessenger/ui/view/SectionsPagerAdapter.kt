@@ -1,4 +1,4 @@
-package br.org.venturus.venturmessenger.ui.main
+package br.org.venturus.venturmessenger.ui.view
 
 import android.content.Context
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package br.org.venturus.venturmessenger.ui.main
+package br.org.venturus.venturmessenger.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import br.org.venturus.venturmessenger.R
 import br.org.venturus.venturmessenger.databinding.FragmentMainBinding
-import br.org.venturus.venturmessenger.model.ContactsAdapter
+import br.org.venturus.venturmessenger.viewmodel.PageViewModel
 
 /**
  * A placeholder fragment containing a simple view.

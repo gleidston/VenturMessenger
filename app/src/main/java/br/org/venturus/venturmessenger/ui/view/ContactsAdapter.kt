@@ -1,4 +1,4 @@
-package br.org.venturus.venturmessenger.model
+package br.org.venturus.venturmessenger.ui.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.org.venturus.venturmessenger.R
+import br.org.venturus.venturmessenger.model.Contact
 
 class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
 
@@ -33,14 +34,14 @@ class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ContactsAdapter.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.contact_item, viewGroup,false)
 
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ContactsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setUser(contacts[position])
     }
 

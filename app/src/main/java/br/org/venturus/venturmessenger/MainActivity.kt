@@ -9,7 +9,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import br.org.venturus.venturmessenger.ui.main.SectionsPagerAdapter
+import br.org.venturus.venturmessenger.ui.view.SectionsPagerAdapter
 import br.org.venturus.venturmessenger.databinding.ActivityMainBinding
 import com.firebase.ui.auth.AuthUI
 

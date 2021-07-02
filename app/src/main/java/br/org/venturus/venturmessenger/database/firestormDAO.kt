@@ -15,9 +15,9 @@ class firestormDAO {
                 id = this.uid
             )
             UserRepository.addUser(user, {
-                LoginActivity().goToMain()
+
             }) {
-                LoginActivity().failToLogin(it)
+
             }
         }
     }

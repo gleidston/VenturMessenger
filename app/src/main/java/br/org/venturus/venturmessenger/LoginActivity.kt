@@ -38,10 +38,7 @@ class LoginActivity : AppCompatActivity() {
                     .build(),
             )
         }
-
-
     }
-
 
     private fun activityResult(resultCode: Int, data: Intent?) {
         val response = IdpResponse.fromResultIntent(data)
@@ -60,17 +57,16 @@ class LoginActivity : AppCompatActivity() {
                     failToLogin(it)
                 })
             }
-
         } else {
             Toast.makeText(this, response?.error?.message, Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun failToLogin(message: String) {
+    fun failToLogin(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    private fun goToMain() {
+    fun goToMain() {
         val intent = Intent(this, MainActivity::class.java)
 
         startActivity(intent)

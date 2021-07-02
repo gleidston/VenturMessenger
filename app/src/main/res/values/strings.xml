@@ -5,4 +5,7 @@
     <string name="tab_text_3">Mensagens</string>
     <string name="bem_vindo">Seja bem vido </string>
     <string name="button_textLogin">Entrar</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="todo">TODO</string>
 </resources>

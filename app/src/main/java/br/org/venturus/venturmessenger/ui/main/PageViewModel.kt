@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import br.org.venturus.venturmessenger.model.Contact
+import br.org.venturus.venturmessenger.repository.UserRepository
 
 class PageViewModel : ViewModel() {
 
@@ -16,4 +18,12 @@ class PageViewModel : ViewModel() {
     fun setIndex(index: Int) {
         _index.value = index
     }
+
+    private val _contactsList = MutableLiveData<ArrayList<Contact>>().apply {
+        UserRepository.getMyContacts {
+            value = it
+        }
+    }
+
+    val contactsList: LiveData<ArrayList<Contact>> = _contactsList
 }

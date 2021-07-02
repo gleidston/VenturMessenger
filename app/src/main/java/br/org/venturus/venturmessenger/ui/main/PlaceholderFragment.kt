@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.org.venturus.venturmessenger.R
 import br.org.venturus.venturmessenger.databinding.FragmentMainBinding
+import br.org.venturus.venturmessenger.model.ContactsAdapter
 
 /**
  * A placeholder fragment containing a simple view.
@@ -37,6 +38,13 @@ class PlaceholderFragment : Fragment() {
 
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         val root = binding.root
+
+        val contactList = binding.contactList
+        val adapter = ContactsAdapter()
+        contactList.adapter = adapter
+        pageViewModel.contactsList.observe(viewLifecycleOwner, Observer {
+            adapter.contacts = it
+        })
 
         val textView: TextView = binding.sectionLabel
         pageViewModel.text.observe(viewLifecycleOwner, Observer {

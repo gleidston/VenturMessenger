@@ -3,34 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
-
-    <TextView
-        android:id="@+id/contactName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/contactImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/contactImage"
-        app:layout_constraintTop_toTopOf="@+id/contactImage" />
 
     <ImageView
         android:id="@+id/contactImage"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/contactDetails"
-        android:layout_width="wrap_content"
+        android:id="@+id/contactName"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="354dp"
-        android:text="TextView"
+        android:layout_marginStart="16dp"
+        android:text="Contact Name"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/contactImage"
-        tools:layout_editor_absoluteY="57dp" />
+        app:layout_constraintStart_toEndOf="@+id/contactImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/contactDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Contact Details"
+        app:layout_constraintBottom_toBottomOf="@+id/contactImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/contactImage" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contactDetails"
+        app:layout_constraintStart_toStartOf="@id/contactDetails"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

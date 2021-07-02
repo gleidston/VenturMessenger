@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
             AuthUI.IdpConfig.GoogleBuilder().build()
         )
 
-
         findViewById<Button>(R.id.loginButton).setOnClickListener {
             resultLauncher.launch(
                 AuthUI.getInstance()

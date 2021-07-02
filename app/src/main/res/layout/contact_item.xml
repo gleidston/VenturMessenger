@@ -9,22 +9,24 @@
     android:paddingRight="8dp">
 
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/contactImage"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:src="@drawable/venturus"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/contactName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:fontFamily="@font/robotomedium"
         android:text="@string/contact_name"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/contactImage"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,10 +36,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:fontFamily="@font/robotoregular"
         android:text="@string/contact_details"
         app:layout_constraintBottom_toBottomOf="@+id/contactImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/contactImage" />
+        app:layout_constraintStart_toEndOf="@id/contactImage"
+        app:layout_constraintTop_toBottomOf="@+id/contactName" />
 
     <View
         android:id="@+id/divider"

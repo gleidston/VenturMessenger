@@ -10,14 +10,16 @@ import br.org.venturus.venturmessenger.repository.UserRepository
 
 class PageViewModel : ViewModel() {
 
+
     private val _index = MutableLiveData<Int>()
     val text: LiveData<String> = Transformations.map(_index) {
-        "Hello world from section: $it"
+        "Lista : $it"
     }
 
     fun setIndex(index: Int) {
         _index.value = index
     }
+
 
     private val _contactsList = MutableLiveData<ArrayList<Contact>>().apply {
         UserRepository.getMyContacts {

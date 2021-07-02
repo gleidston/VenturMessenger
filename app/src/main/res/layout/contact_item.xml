@@ -7,20 +7,30 @@
 
 
     <TextView
-        android:id="@+id/perfil_name"
+        android:id="@+id/contactName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/perfil_Image"
+        app:layout_constraintBottom_toBottomOf="@+id/contactImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/perfil_Image"
-        app:layout_constraintTop_toTopOf="@+id/perfil_Image" />
+        app:layout_constraintStart_toEndOf="@+id/contactImage"
+        app:layout_constraintTop_toTopOf="@+id/contactImage" />
 
     <ImageView
-        android:id="@+id/perfil_Image"
+        android:id="@+id/contactImage"
         android:layout_width="60dp"
         android:layout_height="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/contactDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="354dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/contactImage"
+        tools:layout_editor_absoluteY="57dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

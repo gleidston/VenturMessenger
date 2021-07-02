@@ -35,7 +35,7 @@ class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ContactsAdapter.ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.contato_item, viewGroup,false)
+            .inflate(R.layout.contact_item, viewGroup,false)
 
         return ViewHolder(view)
     }

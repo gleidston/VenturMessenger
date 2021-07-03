@@ -4,28 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/chat_background"
     tools:context=".ChatActivity">
 
     <EditText
         android:id="@+id/txtMessage"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/round_message"
         android:ems="10"
         android:inputType="textPersonName"
+        android:layout_marginEnd="@dimen/default_padding"
+        android:paddingStart="@dimen/default_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSend"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         tools:text="Name" />
 
     <ImageButton
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:layout_marginEnd="@dimen/default_padding"
+        android:background="@color/darkGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
@@ -34,15 +40,18 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
-        tools:listitem="@layout/message_view"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingBottom="@dimen/default_padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/btnSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/message_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

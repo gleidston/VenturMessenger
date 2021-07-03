@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">VenturMessenger</string>
     <string name="tab_text_1">Chat</string>
-    <string name="tab_text_2">Configurações</string>
-    <string name="tab_text_3">Status</string>
-    <string name="bem_vindo">Seja bem vido </string>
+    <string name="tab_text_2">Status</string>
+    <string name="tab_text_3">Contatos</string>
+    <string name="bem_vindo">Seja bem vindo </string>
     <string name="button_textLogin">Entrar</string>
     <string name="contact_name">Contact Name</string>
     <string name="contact_details">Contact Details</string>

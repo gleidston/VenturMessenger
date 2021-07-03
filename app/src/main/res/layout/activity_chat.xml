@@ -13,7 +13,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/round_message"
+        android:background="@drawable/round_message_to"
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginEnd="@dimen/default_padding"
@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnSend"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-        tools:text="Name" />
+        tools:text="@string/message_input" />
 
     <ImageButton
         android:id="@+id/btnSend"
@@ -31,7 +31,7 @@
         android:scaleX="1.3"
         android:scaleY="1.3"
         android:layout_marginEnd="@dimen/default_padding"
-        android:background="@color/darkGreen"
+        android:background="@drawable/round_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
@@ -53,5 +53,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/message_view" />
+        tools:listitem="@layout/message_view_to" />
 </androidx.constraintlayout.widget.ConstraintLayout>

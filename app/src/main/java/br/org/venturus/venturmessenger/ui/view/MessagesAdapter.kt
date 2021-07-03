@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.org.venturus.venturmessenger.R
 import br.org.venturus.venturmessenger.model.Message
+import br.org.venturus.venturmessenger.repository.ChatRepository
+import br.org.venturus.venturmessenger.repository.UserRepository
 
 class MessagesAdapter : RecyclerView.Adapter<MessagesAdapter.ViewHolder>() {
 
@@ -25,8 +27,13 @@ class MessagesAdapter : RecyclerView.Adapter<MessagesAdapter.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessagesAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.message_view, parent, false)
+        val view = if(viewType == 1) {
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.message_view_from, parent, false)
+        } else {
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.message_view_to, parent, false)
+        }
 
         return ViewHolder(view)
     }
@@ -35,9 +42,11 @@ class MessagesAdapter : RecyclerView.Adapter<MessagesAdapter.ViewHolder>() {
         holder.setMsg(messages[position])
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return if(messages[position].from == UserRepository.myEmail()) 1 else 0
+    }
+
     override fun getItemCount(): Int {
         return messages.size
     }
-
-
 }

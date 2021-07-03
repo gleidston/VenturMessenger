@@ -27,7 +27,7 @@
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:layout_marginBottom="64dp"
-        android:background="@drawable/login_btn"
+        android:background="@drawable/round_message_to"
         android:fontFamily="@font/roboto_slab_bold"
         android:shadowRadius="5"
         android:text="@string/button_textLogin"

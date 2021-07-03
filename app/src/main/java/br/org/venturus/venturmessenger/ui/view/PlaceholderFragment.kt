@@ -1,5 +1,6 @@
 package br.org.venturus.venturmessenger.ui.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import br.org.venturus.venturmessenger.ChatActivity
 import br.org.venturus.venturmessenger.databinding.FragmentMainBinding
+import br.org.venturus.venturmessenger.model.Contact
+import br.org.venturus.venturmessenger.repository.ChatRepository
+import br.org.venturus.venturmessenger.repository.UserRepository
 import br.org.venturus.venturmessenger.viewmodel.PageViewModel
 
 /**
@@ -39,7 +44,9 @@ class PlaceholderFragment : Fragment() {
         val root = binding.root
 
         val contactList = binding.contactList
-        val adapter = ContactsAdapter()
+        val adapter = ContactsAdapter {
+            contact -> onContactSelected(contact)
+        }
         contactList.adapter = adapter
         pageViewModel.contactsList.observe(viewLifecycleOwner, Observer {
             adapter.contacts = it
@@ -50,6 +57,17 @@ class PlaceholderFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+    private fun onContactSelected(contact: Contact) {
+        val intent: Intent = Intent(context, ChatActivity::class.java)
+        val email = UserRepository.myEmail()
+        if (email != null) {
+            val chatId = ChatRepository.createChatId(email, contact.email)
+                intent.putExtra("chatId", chatId)
+                intent.putExtra("contactEmail", contact.email)
+        }
+        startActivity(intent)
     }
 
     companion object {

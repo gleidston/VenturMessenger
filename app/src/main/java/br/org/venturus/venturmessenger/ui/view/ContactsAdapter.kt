@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.org.venturus.venturmessenger.R
 import br.org.venturus.venturmessenger.model.Contact
 
-class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
+class ContactsAdapter(val onContactSelected: (contact: Contact) -> Unit) : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
 
     var contacts: ArrayList<Contact> = ArrayList<Contact>()
         set(value) {
@@ -20,12 +20,12 @@ class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
     class ViewHolder (view: View): RecyclerView.ViewHolder(view){
         val contactName: TextView = view.findViewById(R.id.contactName)
         val contactDetails: TextView = view.findViewById(R.id.contactDetails)
-        val contactImage: ImageView = view.findViewById(R.id.contactImage)
+        val send: ImageView = view.findViewById(R.id.send)
 
         fun setUser(contact: Contact){
             contactName.text = contact.name
             contactDetails.text = contact.email
-            // IMG
+
         }
     }
 
@@ -43,6 +43,9 @@ class ContactsAdapter : RecyclerView.Adapter<ContactsAdapter.ViewHolder> (){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setUser(contacts[position])
+        holder.send.setOnClickListener {
+            onContactSelected(contacts[position])
+        }
     }
 
     override fun getItemCount(): Int {

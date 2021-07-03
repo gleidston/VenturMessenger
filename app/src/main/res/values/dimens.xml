@@ -7,4 +7,5 @@
     <dimen name="appbar_padding_top">40dp</dimen>
     <dimen name="box_two_width">130dp</dimen>
     <dimen name="box_two_height">130dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
 </resources>
